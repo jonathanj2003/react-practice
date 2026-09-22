@@ -32,7 +32,7 @@ function Login () {
 
   async function handleLogin(event) { 
     event.preventDefault(); 
-    const response = await fetch("http://localhost:3000/api/login", {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
@@ -74,7 +74,7 @@ function Signup() {
 
   async function handleSignup(event) {
     event.preventDefault();
-    const response = await fetch ("http://localhost:3000/api/signup", { 
+    const response = await fetch (`${import.meta.env.VITE_API_URL}/api/signup`, { 
       method: "POST",
       headers: { "Content-Type": "application/json" }, 
       body: JSON.stringify({ email, password }),
@@ -118,7 +118,7 @@ function Profile() {
       setEmail("Not Logged In.");
       return;
     }
-    const response = await fetch ("http://localhost:3000/api/me", {
+    const response = await fetch (`${import.meta.env.VITE_API_URL}/api/me`, {
       headers: { Authorization: "Bearer " + token },
     });
     const data = await response.json();
