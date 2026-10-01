@@ -1,16 +1,68 @@
-# React + Vite
+# Build Path — Full-Stack Auth App
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A full-stack web application built from scratch while learning full-stack development — React frontend, Node.js/Express backend, PostgreSQL database, and complete JWT-based authentication, deployed live.
 
-Currently, two official plugins are available:
+**Live app:** [https://react-practice-ashen.vercel.app/](https://react-practice-ashen.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**Backend repo:** [https://github.com/jonathanj2003/build-path-server](https://github.com/jonathanj2003/build-path-server)
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- User signup and login with hashed passwords (bcrypt) and JWT-based sessions
 
-## Expanding the Oxlint configuration
+- Protected route that verifies a logged-in user's identity
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- Client-side email validation with an automated test suite
+
+- Deployed with a real production database, fully separate from local development
+
+## Tech Stack
+
+**Frontend:** React, Vite, Vitest (testing), oxlint (linting)
+
+**Backend:** Node.js, Express, PostgreSQL, Prisma ORM, bcrypt, JSON Web Tokens
+
+**Deployment:** Vercel (frontend), Render (backend + database)
+
+## Running it locally
+
+```
+
+git clone [https://github.com/jonathanj2003/react-practice.git](https://github.com/jonathanj2003/react-practice.git)
+
+cd react-practice
+
+pnpm install
+
+```
+
+Create a `.env` file in the project root with:
+
+```
+
+VITE_API_URL=[http://localhost:3000](http://localhost:3000)
+
+```
+
+Then start the dev server:
+
+```
+
+pnpm dev
+
+```
+
+(Requires the [backend]([https://github.com/jonathanj2003/build-path-server](https://github.com/jonathanj2003/build-path-server)) running locally too — see that repo's README.)
+
+## Running tests
+
+```
+
+pnpm test
+
+```
+
+## What I learned
+
+This project was built end-to-end as a self-directed learning project: HTML/CSS/JS fundamentals, Git/GitHub workflows, building a REST API with Express, working with a relational database through Prisma, implementing authentication with bcrypt and JWTs, building a UI in React, writing automated tests, and deploying a full production system across multiple cloud services.
+

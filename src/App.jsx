@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { isValidEmail } from "./utils.js";
 
 // ---- Component definitions (always above App) ----
 
@@ -74,6 +75,10 @@ function Signup() {
 
   async function handleSignup(event) {
     event.preventDefault();
+    if (!isValidEmail(email)) { 
+      setMessage("Please enter a valid email address.");
+      return;
+    }
     const response = await fetch (`${import.meta.env.VITE_API_URL}/api/signup`, { 
       method: "POST",
       headers: { "Content-Type": "application/json" }, 
